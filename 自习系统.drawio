@@ -1,9 +1,66 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0" version="26.0.5">
   <diagram name="第 1 页" id="Zvt5n1aen7zP3Oayx_7U">
-    <mxGraphModel>
+    <mxGraphModel dx="1050" dy="611" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="DYtknpNxplZgI2DQsi1V-20" value="" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+          <mxGeometry x="130" y="260" width="620" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-4" value="" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+          <mxGeometry x="130" y="440" width="620" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-1" value="学生数据" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-3" value="配置管理" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-5" value="数据层" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="450" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-6" value="学习数据" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-8" value="" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+          <mxGeometry x="130" y="110" width="620" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-9" value="复习智能体" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-10" value="自习智能体" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-11" value="预习智能体" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-12" value="AI应用层" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="110" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-13" value="AI能力导入适配" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="250" y="350" width="480" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-14" value="AI能力评估" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="160" y="260" width="60" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-16" value="AI能力编排" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="270" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-17" value="AI能力剪裁调优" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="310" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-22" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="380" as="sourcePoint" />
+            <mxPoint x="560" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;shape=flexArrow;" edge="1" parent="1" source="DYtknpNxplZgI2DQsi1V-20" target="DYtknpNxplZgI2DQsi1V-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DYtknpNxplZgI2DQsi1V-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;shape=flexArrow;" edge="1" parent="1" source="DYtknpNxplZgI2DQsi1V-4" target="DYtknpNxplZgI2DQsi1V-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
