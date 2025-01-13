@@ -4,32 +4,21 @@ param workloadName string
 @description('Connectivity Resource Group Name')
 param connectivityResourceGroupName string
 
-@description('Subnets')
-param contosoProjectsInfo array
+@description('Connectivity Info')
+param workloadConnectivityInfo array 
 
 @description('Address Prefixes')
-var addressPrefixes = [
-  '10.0.0.0/16'
-]
+param addressPrefixes array 
 
 @description('Tags')
-var tags = {
-  workload: workloadName
+param tags object = {
+  workload: '${workloadName}-DevExp'
   landingZone: 'connectivity'
   resourceType: 'virtualNetwork'
   ProductTeam: 'Platform Engineering'
   Environment: 'Production'
   Department: 'IT'
   offering: 'DevBox-as-a-Service'
-}
-
-@description('DDoS Protection Plan')
-module ddosProtectionPlan 'DDoSPlan/DDoSPlanResource.bicep' = {
-  name: 'ddosProtectionPlan'
-  scope: resourceGroup(connectivityResourceGroupName)
-  params: {
-    name: workloadName
-  }
 }
 
 @description('Virtual Network Resource')
@@ -41,15 +30,13 @@ module virtualNetwork 'virtualNetwork/virtualNetworkResource.bicep' = {
     location: resourceGroup().location
     tags: tags
     addressPrefixes: addressPrefixes
-    enableDdosProtection: true
-    ddosProtectionPlanId: ddosProtectionPlan.outputs.ddosProtectionPlanId
-    subnets: contosoProjectsInfo
+    subnets: workloadConnectivityInfo
   }
 }
 
 @description('Network Connection Resource')
 module networkConnection 'networkConnection/networkConnectionResource.bicep' = [
-  for (netConnection, i) in contosoProjectsInfo: {
+  for (netConnection, i) in workloadConnectivityInfo: {
     name: 'netCon-${netConnection.name}'
     scope: resourceGroup(connectivityResourceGroupName)
     params: {
@@ -57,13 +44,14 @@ module networkConnection 'networkConnection/networkConnectionResource.bicep' = [
       subnetName: virtualNetwork.outputs.virtualNetworkSubnets[i].name
       virtualNetworkResourceGroupName: connectivityResourceGroupName
       domainJoinType: netConnection.networkConnection.domainJoinType
+      tags: tags
     }
   }
 ]
 
 @description('Network Connections')
-output networkConnections array = [
-  for (netConnection, i) in contosoProjectsInfo: {
+output networkConnectionsCreated array = [
+  for (netConnection, i) in workloadConnectivityInfo: {
     name: networkConnection[i].outputs.networkConnectionName
     id: networkConnection[i].outputs.networkConnectionId
   }

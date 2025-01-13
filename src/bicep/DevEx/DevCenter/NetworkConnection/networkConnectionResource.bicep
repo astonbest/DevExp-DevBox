@@ -37,14 +37,3 @@ resource networkConnection 'Microsoft.DevCenter/networkConnections@2024-10-01-pr
   }
 }
 
-@description('The ID of the network connection')
-output networkConnectionId string = networkConnection.id
-
-@description('The name of the network connection')
-output networkConnectionName string = networkConnection.name
-
-@description('The domain join type of the network connection')
-output domainJoinType string = networkConnection.properties.domainJoinType
-
-@description('Subnet ID')
-output subnetId string = networkConnection.properties.subnetId

@@ -60,14 +60,3 @@ resource devCenterCatalog 'Microsoft.DevCenter/devcenters/catalogs@2024-10-01-pr
   }
 }
 
-@description('Catalog Resource ID')
-output id string = devCenterCatalog.id
-
-@description('Catalog Resource Name')
-output catalogName string = devCenterCatalog.name
-
-@description('Catalog Resource Tags')
-output catalogTags object = devCenterCatalog.properties.tags
-
-@description('Catalog Resource Sync Type')
-output catalogSyncType string = devCenterCatalog.properties.syncType
