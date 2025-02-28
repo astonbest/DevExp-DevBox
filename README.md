@@ -1,156 +1,57 @@
 # Dev Experience with Microsoft DevBox
 
-Welcome to the Dev Experience with Microsoft DevBox repository! This repository demonstrates how to deploy Microsoft DevBox for Contoso's Software Development Engineers to expedite their onboarding process and streamline project integration.
-
-## Build and Deploy Status
-
-| Build | Deploy |
-|:-----:|:------:|
-| [![Test Login To Azure](https://github.com/Evilazaro/MicrosoftDevBox/actions/workflows/testLoginToAzure.yaml/badge.svg)](https://github.com/Evilazaro/MicrosoftDevBox/actions/workflows/testLoginToAzure.yaml) [![DevBox as a Service CI](https://github.com/Evilazaro/MicrosoftDevBox/actions/workflows/devBox-CI.yaml/badge.svg)](https://github.com/Evilazaro/MicrosoftDevBox/actions/workflows/devBox-CI.yaml) | [![DevBox as a Service CI and CD](https://github.com/Evilazaro/MicrosoftDevBox/actions/workflows/deployDevBox.yaml/badge.svg)](https://github.com/Evilazaro/MicrosoftDevBox/actions/workflows/deployDevBox.yaml) [![Clean UP Dev Experience with Microsoft DevBox Deployment](https://github.com/Evilazaro/DevExp-MicrosoftDevBox/actions/workflows/cleanUpDeployment.yaml/badge.svg)](https://github.com/Evilazaro/DevExp-MicrosoftDevBox/actions/workflows/cleanUpDeployment.yaml) [![Dev Experience with Microsoft DevBox New Release](https://github.com/Evilazaro/DevExp-MicrosoftDevBox/actions/workflows/devExpNewRelease.yaml/badge.svg)](https://github.com/Evilazaro/DevExp-MicrosoftDevBox/actions/workflows/devExpNewRelease.yaml) |
-
+Example templates and customization configurations for Dev Box and Azure Deployment Environments.
 
 ## Table of Contents
 
-- [Overview](#overview)
-    - [Contoso](#contoso)
-    - [Microsoft DevBox Overview](#microsoft-devbox-overview)
 - [Solution Architecture](#solution-architecture)
-- [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Deployment](#installation)
+- [Get Started](#get-started)
+  - [Open a new Terminal](#open-a-new-terminal)
+  - [Login to Azure](#login-to-azure)
+  - [Create your environment](#create-your-environment)
+  - [Provision the solution](#provision-the-solution)
 - [Contributing](#contributing)
+- [Trademarks](#trademarks)
 - [License](#license)
-
-## Overview
-
-### Contoso
-Contoso aims to enhance the developer experience by leveraging Microsoft DevBox. This repository provides a comprehensive guide and resources to deploy and manage Microsoft DevBox environments efficiently.
-
-### Microsoft DevBox Overview
-
-Microsoft DevBox is a cloud-based service that provides pre-configured, secure, and scalable development environments. It allows developers to quickly set up and start coding without worrying about the underlying infrastructure. DevBox integrates seamlessly with Azure services, providing a robust platform for development and testing.
-
-For more information, please refer to the official Microsoft DevBox documentation:
-- [Microsoft DevBox Overview](https://docs.microsoft.com/en-us/azure/dev-box/overview)
-- [Getting Started with Microsoft DevBox](https://docs.microsoft.com/en-us/azure/dev-box/get-started)
-- [Microsoft DevBox Pricing](https://azure.microsoft.com/en-us/pricing/details/dev-box/)
 
 ## Solution Architecture
 
 ![Solution Architecture](./images/ContosoDevBox.png)
 
-## Getting Started
+## Get Started
 
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+### Open a new Terminal
 
-### Prerequisites
+![alt text](./images/image.png)
 
-- [Azure Subscription](https://azure.microsoft.com/en-us/free/)
-- [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
-- [Bicep CLI](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/install)
-- [GitHub CLI](https://cli.github.com/)
-- [Azure Developer CLI](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Git](https://git-scm.com/)
+### Login to Azure
 
-### Deployment
+```bash
+azd auth login
+```
 
-1. **Fork the repository:**
+### Create your environment
+```bash
+azd new env dev
+```
 
-    Navigate to the GitHub repository page and click on the "Fork" button at the top right corner of the page. This will create a copy of the repository under your GitHub account.
-
-2. **Clone your forked repository:**
-
-    On Windows, open the Terminal App.
-
-    ![alt text](./images/image-1.png)
-    
-    Type the following command line:
-
-    Bash or PowerShell
-    ```sh
-    git clone https://github.com/<your-username>/MicrosoftDevBox.git
-    cd MicrosoftDevBox
-    code .
-    ```
-
-    Visual Studio Code will open as showed below.
-    
-    ![Visual Studio Code](./images/vscode.png)
-   
-2. **Login to Azure:**
-
-    Click on "Terminal" menu and start a new Terminal.
-
-    ![New Terminal](./images/newTerminal.png)
-
-    A new terminal will be started according with your terminal preferences. If you running VS Code on Windows, you problably will get a PowerShell Terminal but don't worry, I will explay how to set up the environment using PowerShell and Bash scripts.
-    
-    Bash or PowerShell
-    ```sh
-    az login --use-device-code
-
-    gh auth login
-
-    ```
-
-    Select the GitHub.com option and press enter:
-
-    ![GitHub.com](./images/gh.com.png)
-
-    Select HTTPS and press enter:
-
-    ![HTTPS](./images/https.png)
-
-    Type Y and press enter:
-
-    ![Yes](./images/yes.png)
-
-    Select the "Login with a web browser" option and press enter:
-
-    ![login web](./images/loginWeb.png)  
-
-    Copy the code generated to your clipboard and press enter to open the browser:
-
-    ![Code](./images/code.png)
-
-    In the browser, click on the "Continue" button and paste the code on the text boxes:
-
-    ![Continue](./images/continue.png)
-
-    Clique on the "Continue" button and you will be authenticated.
-
-    ![auth](./images/auth.png)
-
-3. **Set up your credentials for the GitHub Actions**
-    
-    Bash
-    ```sh
-    cd src/deploy/setup/bash/
-    ./setUp.sh
-    ```
-
-    Outcome:
-
-
-    PowerShell
-    ```powershell
-    cd src\deploy\setup\powershell
-    .\setUp.ps1
-    ```
-
-    Outcome:
-
-    The outcome must see like the following:
-
-    ```cmd
-    cd evi
-    ```
+### Provision the solution
+```bash
+azd provision -e dev
+```
 
 ## Contributing
 
-We welcome contributions to enhance the Dev Experience with Microsoft DevBox. Please follow the [contributing guidelines](CONTRIBUTING.md) to submit your changes.
+This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com).
+
+When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+## Trademarks
+
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general). Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party's policies.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the [MIT License](LICENSE).
